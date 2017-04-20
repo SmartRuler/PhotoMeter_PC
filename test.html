@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Picture for Measure</title>
+  <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="js/canvas2image.js"></script> 
+     <!--<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+	
+	<script type="text/javascript" src="test.js"></script>
+  </head>
+  
+  <body>   
+  <div class="container-fluid" style="background-color:#eeeeee">
+	<!-- title -->
+	<div class="row" style="background-color:#b0d0ff">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					SmartRuler! <small>measure for convenience</small>
+				</h1>
+			</div>
+			<blockquote class="pull-right">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+				</p> <small>Someone famous <cite>Source Title</cite></small>
+			</blockquote>
+		</div>
+	</div>
+	<!-- picture -->
+	<div class="row" >
+		
+		<div class="col-md-12">
+			<form action='' method='post' name='myform'>
+			<div class = "col-md-3"></div>
+			<div class = "col-md-5">
+			<canvas id="picCanvas" width="600" height="400" style="border:1px solid red"></canvas>
+			</div>
+			<div class = "col-md-4">
+			</div>
+			</br></br>
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<input type='file' id='iptfileupload'  value=' ' />
+				</div>
+			</form>
+		</div>
+		
+	</div>
+	</br>
+	
+	<div class="row" >
+		<!-- btn-group -->
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-6">
+				</div>
+				<div class="col-md-6">
+					<form role="form" name="refForm">
+						<div class="form-group">
+							<label for="name">Reference Choose</label>
+							<select class="form-control" name="refSel" >
+								<option value="8.5"  >Credit Card</option>
+								<option value="2.5">One Yuan Coin</option>
+								<option value="0" selected>Customized</option>
+							</select>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="col-md-8">
+				<form role="form">
+					<div class="form-group">				 
+					<label for="reflen">
+						Reference length
+					</label>
+					<input type="text" class="form-control" id="reflen" value=" "/>
+					</div>			
+				</form>
+			</div>
+			<div class="col-md-4">
+			</br>
+				<button class="btn btn-default" id="cal" >
+					Calculate
+				</button>
+			</div>
+		</div>
+		<div class="col-md-4">
+			</br>
+			<button class="btn btn-default" id="res" >
+					Reset
+			</button>
+			<button class="btn btn-default" id="sav" >
+					Save
+			</button>
+		</div>
+	</div>
+	</br></br></br></br></br></br></br></br></br>
+	
+	<div class="row" >
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+					 
+			<address>
+				<strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+			</address>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+</body>
+</html>
