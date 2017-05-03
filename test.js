@@ -6,8 +6,6 @@ var img;
 $(document).ready(function (){
 	var canvas = $("#picCanvas")[0];
 	var cxt = canvas.getContext('2d');
-	//var canvas = document.getElementById("picCanvas");
-	//var cxt = canvas.getContext("2d");
 	
 	cxt.strokeStyle = "#f00";
 	cxt.lineWidth = 3;
@@ -41,17 +39,8 @@ $(document).ready(function (){
 	});
 	
 	$(".form-control").change(function (){
-		var refObject=$(".form-control").find("option:selected").val();
+		staInit();
 		
-		if(refObject === "8.5"||refObject ==="2.5"){
-			$("#reflen").val(refObject);
-			$("#reflen").attr("disabled","disabled");
-		}
-		else{
-			$("#reflen").removeAttr("disabled");		
-			
-			$("#reflen").focus();
-		}
 	});
 	
 	$("#cal").click(function (){
@@ -90,6 +79,7 @@ $(document).ready(function (){
 });
 function Init(c){
 	picInit(c);
+	selectInit();
 	staInit();
 }
 function picInit(c){
@@ -100,11 +90,15 @@ function picInit(c){
 		console.log(c.width,c.height);
     }
 }
+function selectInit(){
+	$(".form-control").find("option[text='Customized']").attr("selected",true);
+	$("#reflen").val(0);				
+	$("#reflen").focus();
+}
 function staInit(){
 	points = [];
 	metricPerPixel = 0;
 	
-	var refInit =$(".form-control").val(0);
 	var refObject=$(".form-control").find("option:selected").val();
 		
 		if(refObject === "8.5"||refObject ==="2.5"){
@@ -194,10 +188,6 @@ function drawLines(){
 			cxt.moveTo(points[i-1].x,points[i-1].y);
 			cxt.lineTo(points[i].x,points[i].y);
 			
-			if(refLen == 0 ||refLen == undefined || isNaN(refLen) ){
-				alert("Please enter reference length");
-			}
-			else{
 				cxt.fillText(refLen,(points[0].x + points[1].x) / 2 ,(points[0].y + points[1].y) / 2 );
 				
 				if(i>=3){
@@ -205,7 +195,7 @@ function drawLines(){
 											canvasToPicX(points[i].x),canvasToPicY(points[i].y)) / metricPerPixel).toFixed(2) , 
 										(points[i-1].x + points[i].x) / 2 ,(points[i-1].y + points[i].y) / 2 );
 			}
-			}		
+					
 	
 		}	
 		cxt.closePath();
