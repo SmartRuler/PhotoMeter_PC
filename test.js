@@ -203,7 +203,7 @@ function drawLines(){
 	}}
 
 function canvasToPicX(m){
-	var wPicToCan = 300 / img.width;
+	var wPicToCan = 600 / img.width;
 		
 	var mCanToPic = m / wPicToCan;
 		
